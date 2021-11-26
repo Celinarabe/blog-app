@@ -1,6 +1,6 @@
 <%= form_with model: entry do |form| %>
 <div>
-  <%= form.label :date %><br>
+  <%= form.label :date %> (MM/DD/YYYY)<br>
   <%= form.text_field :date%>
   <% entry.errors.full_messages_for(:date).each do |message|%>
   <div><%= message %></div>

@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   def index
-    @entries = Entry.all.order('date')
+    @entries = Entry.all.order('date DESC')
   end
 
   # Don't have to pass params here? not sure why, bc some fields
