@@ -3,6 +3,11 @@ class EntriesController < ApplicationController
     @entries = Entry.all.order('date DESC')
   end
 
+  def show
+    @entry = Entry.find(params[:id])
+    @new_task = Task.new(:entry=>@entry)
+  end
+
   # Don't have to pass params here? not sure why, bc some fields
   # Are required
   def new

@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :entries
+  resources :entries do
+    resources :tasks
+  end
 end

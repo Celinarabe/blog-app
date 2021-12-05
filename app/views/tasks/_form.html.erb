@@ -1,0 +1,16 @@
+<%= form_with model: [ @entry, @entry.tasks.build ] do |form| %>
+  <%= form.text_area :body %>
+  <br >
+  <%= form.submit "Add" %>
+
+  <% if @entry.tasks.last.errors.any? %>
+  <p> some errors here </p>
+  <div>
+    <% @entry.tasks.last.errors.full_messages.each do |msg| %>
+      <%= msg %>
+    <% end %>
+  </div>
+  <% end %>
+
+
+<% end %>
