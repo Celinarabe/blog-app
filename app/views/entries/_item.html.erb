@@ -1,11 +1,11 @@
-<strong><%= entry.date %></strong>
+<strong><%= link_to entry.date, entry_path(entry) %></strong>
 <br>
-<% entry.tasks.each do |task| %>
-<li>
-  <%= task.body %>
-</li>
+<%= entry.body%>
+<%# <% entry.tasks.each do |task| %> 
+  <%# <%= task.body %> 
 
-  <% end %>
+
+  <%# <% end %> 
 
 <br>
 <%= link_to "Edit", edit_entry_path(entry) %>

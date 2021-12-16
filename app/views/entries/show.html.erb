@@ -1,14 +1,13 @@
 <h1><%= @entry.date %></h1>
 
+<p><%= @entry.body %></p>
 
+<%# <%= render @entry.tasks%> 
 
-<%= link_to "Edit Entry", edit_entry_path(@entry) %>
-<%= link_to "Delete Entry", entry_path(@entry), method: :delete, data: { confirm: "Are you sure?" } %>
+<%# <h4>Add a task:</h4>
+ <%= render 'tasks/form_new' %> 
 
-
-
-
-<%= render @entry.tasks%>
-
-<h2>Add a task:</h2>
- <%= render 'tasks/form' %>
+<br>
+ <%= link_to "Edit", edit_entry_path(@entry) %>
+<%= link_to "Delete", entry_path(@entry), method: :delete, data: { confirm: "Are you sure?" } %>
+<br>
