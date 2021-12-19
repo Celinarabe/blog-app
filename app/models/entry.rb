@@ -4,4 +4,7 @@ class Entry < ApplicationRecord
   validates :body, presence: true
   validates :date, presence: true, length: {is: 10}
   validates_associated :tasks
+
+  attr_accessor :author, :body, :date
+
 end
