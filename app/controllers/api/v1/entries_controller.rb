@@ -1,15 +1,17 @@
+# frozen_string_literal: true
+
 module Api
   module V1
+    # Entry Controller
     class EntriesController < ApplicationController
       def index
-        # entries = Entry.all.order('date DESC')
-        # render json: { check: "amazing"}
+        entries = Entry.all.order('date DESC')
         render json: EntrySerializer.new(entries).serializable_hash.to_json
       end
 
       def show
         @entry = Entry.find(params[:id])
-        @new_task = Task.new(:entry=>@entry)
+        @new_task = Task.new(entry: @entry)
       end
 
       # Don't have to pass params here? not sure why, bc some fields
